@@ -39,7 +39,11 @@ Object.entries(STATUS_CODES).forEach(([code, status]) => {
     return;
   }
 
-  const name = upperFirst(camelCase(status)) + 'Error';
+  let name = upperFirst(camelCase(status));
+  if (!name.endsWith('Error')) {
+    name += 'Error';
+  }
+
   const error = class extends HttpError {
     static get name() {
       return name;
