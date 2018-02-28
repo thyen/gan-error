@@ -1,6 +1,6 @@
 # @ganintegrity/gan-error
 
-> an extendable `Error`
+> an extendable ES6 [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 ## Installation
 
