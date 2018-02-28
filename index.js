@@ -6,8 +6,8 @@ class GanError extends Error {
     let originalError;
 
     if (message instanceof Error) {
-      message = undefined;
       originalError = message;
+      message = originalError.message;
     }
 
     super(message);
