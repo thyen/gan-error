@@ -20,3 +20,10 @@ const withErrorInstance = new MyError(error);
 
 When passed an error instance, the original error can be accessed via the 
 `error.originalError` property.
+
+## HTTP errors
+
+```js
+class MyError extends GanError.InternalServerError {}
+class MyOtherError extends GanError['500'] {}
+```
