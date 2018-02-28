@@ -21,6 +21,13 @@ class GanError extends Error {
 
     if (originalError) {
       this.originalError = originalError;
+
+      if (
+        originalError instanceof GanError.HttpError &&
+        !(this instanceof GanError.HttpError)
+      ) {
+        this.status = originalError.status;
+      }
     }
   }
 }
