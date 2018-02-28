@@ -27,5 +27,9 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/gan-int/gan-error.git"
   },
-  "homepage": "https://bitbucket.org/gan-int/gan-error#readme"
+  "homepage": "https://bitbucket.org/gan-int/gan-error#readme",
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "statuses": "^1.4.0"
+  }
 }

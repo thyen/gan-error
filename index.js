@@ -1,3 +1,6 @@
+const { STATUS_CODES } = require('statuses');
+const { upperFirst, camelCase } = require('lodash');
+
 class GanError extends Error {
   constructor(message) {
     let originalError;
@@ -21,5 +24,35 @@ class GanError extends Error {
     }
   }
 }
+
+class HttpError extends GanError {
+  constructor(message) {
+    super(message);
+    this.status = this.constructor.status;
+  }
+}
+
+Object.entries(STATUS_CODES).forEach(([code, status]) => {
+  code = parseInt(code);
+
+  if (code < 400 || code >= 600) {
+    return;
+  }
+
+  const name = upperFirst(camelCase(status)) + 'Error';
+  const error = class extends HttpError {
+    static get name() {
+      return name;
+    }
+
+    static get status() {
+      return code;
+    }
+  };
+
+  GanError[code] = GanError[name] = error;
+});
+
+GanError.HttpError = HttpError;
 
 module.exports = GanError;
