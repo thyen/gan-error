@@ -1,1 +1,7 @@
-module.exports = require('./lib/GanError');
+const GanError = require('./lib/GanError');
+
+if (!process.env.DISABLE_GAN_HTTP_ERROR) {
+  require('./lib/addHttpErrors')(GanError);
+}
+
+module.exports = GanError;
