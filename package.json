@@ -1,7 +1,7 @@
 {
   "name": "@ganintegrity/gan-error",
   "version": "0.0.1",
-  "description": "an extendable ES6 Error",
+  "description": "an extendable ES6 Error with support for HTTP errors",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -13,6 +13,7 @@
     "gan-integrity",
     "ganintegrity",
     "gan-error",
+    "http-error",
     "error"
   ],
   "author": "",
