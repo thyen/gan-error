@@ -16,7 +16,7 @@
     "error"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^4.18.1",
     "eslint-config-ganintegrity": "^2.0.1",
