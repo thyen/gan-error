@@ -1,6 +1,6 @@
 const expect = require('unexpected').clone();
 const GanError = require('../lib/GanError');
-const HttpError = require('../lib/HttpError');
+const { BadRequestError } = require('../lib/HttpError');
 
 describe('GanError', () => {
   it('extends `Error`', () => {
@@ -43,13 +43,31 @@ describe('GanError', () => {
       });
 
       it('inherits the status from the error if it has one', () => {
-        const error = new HttpError.BadRequestError('foo');
+        const error = new BadRequestError('foo');
         expect(new GanError(error).status, 'to be', 400);
       });
 
       it('stores the error as `originalError`', () => {
         const error = new Error('foo');
         expect(new GanError(error).originalError, 'to equal', error);
+      });
+    });
+
+    describe('when passed an object', () => {
+      it('uses the message from the object if there is one', () => {
+        expect(new GanError({ message: 'foo' }).message, 'to be', 'foo');
+      });
+
+      it('assigns all other items in the object to the error', () => {
+        expect(
+          new GanError({ message: 'foo', foo: 'foo', bar: {} }),
+          'to satisfy',
+          { message: 'foo', foo: 'foo', bar: {} }
+        );
+      });
+
+      it('does not overwrite already-set prototype keys with the object keys', () => {
+        expect(new BadRequestError({ status: 500 }).status, 'to be', 400);
       });
     });
   });
