@@ -1,5 +1,10 @@
 # @ganintegrity/gan-error
 
+[![npm version](https://badge.fury.io/js/@ganintegrity/gan-error.svg)](http://badge.fury.io/js/@ganintegrity/gan-error)
+[![build status](https://travis-ci.org/ganintegrity/gan-error.svg?branch=master)](https://travis-ci.org/ganintegrity/gan-error)
+[![coverage status](https://coveralls.io/repos/github/ganintegrity/gan-error/badge.svg?branch=master)](https://coveralls.io/github/ganintegrity/gan-error?branch=master)
+[![dependency status](https://david-dm.org/ganintegrity/gan-error.svg)](https://david-dm.org/ganintegrity/gan-error)
+
 > an extendable ES6 [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 > with support for HTTP errors
 
