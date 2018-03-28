@@ -58,11 +58,11 @@ describe('GanError', () => {
         expect(new GanError({ message: 'foo' }).message, 'to be', 'foo');
       });
 
-      it('assigns all other items in the object to the error', () => {
+      it('stores the object as `data`', () => {
         expect(
           new GanError({ message: 'foo', foo: 'foo', bar: {} }),
           'to satisfy',
-          { message: 'foo', foo: 'foo', bar: {} }
+          { data: { message: 'foo', foo: 'foo', bar: {} } }
         );
       });
 
