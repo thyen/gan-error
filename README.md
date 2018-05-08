@@ -58,16 +58,16 @@ console.log(error.status); // => 500
 console.log(error.originalError); // => new GanError.InternalServerError('foo')
 ```
 
-Objects can also be passed to the constructor and all the items in the object
-will be assigned to the error:
+Objects can also be passed to the constructor. They will be stored as `data` on
+the error:
 
 ```js
 class CustomError extends GanError {}
 
-const error = new CustomError({ message: 'foo', data: { foo: 'bar' } });
+const error = new CustomError({ message: 'foo', foo: 'bar' } });
 
-console.log(error.message); // => 'foo'
-console.log(error.data); // => { foo: 'bar' }
+console.log(error.message); // => undefined
+console.log(error.data); // => { message: 'foo', foo: 'bar' }
 ```
 
 ## HTTP errors
