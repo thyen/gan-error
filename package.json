@@ -23,7 +23,7 @@
     "@semantic-release/changelog": "^2.0.0",
     "@semantic-release/git": "^4.0.0",
     "coveralls": "^3.0.0",
-    "eslint": "^4.18.1",
+    "eslint": "^5.14.0",
     "eslint-config-ganintegrity": "^2.0.1",
     "mocha": "^5.0.1",
     "nyc": "^13.0.0",
