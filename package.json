@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/ganintegrity/gan-error#readme",
   "dependencies": {
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.11",
     "statuses": "^1.4.0"
   }
 }
